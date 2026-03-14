@@ -1,0 +1,204 @@
+{
+  "projectType": "api-service",
+  "projectName": "Sistema Bancario API",
+  "projectDescription": "A complete banking REST API with authentication, account management, transactions, and rewards system built with Node.js and PostgreSQL/MongoDB.",
+  "theme": "mint",
+  "primaryColor": "#1E40AF",
+  "lightColor": "#3B82F6",
+  "darkColor": "#1E3A8A",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/architecture",
+              "concepts/authentication",
+              "concepts/roles-permissions",
+              "concepts/account-types"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/user-registration",
+              "guides/account-management",
+              "guides/transactions",
+              "guides/rewards-system",
+              "guides/currency-conversion"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/environment",
+              "configuration/database",
+              "configuration/email",
+              "configuration/cloudinary"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Authentication",
+            "pages": [
+              "api/auth/register",
+              "api/auth/login",
+              "api/auth/verify-email",
+              "api/auth/forgot-password",
+              "api/auth/reset-password",
+              "api/auth/profile"
+            ]
+          },
+          {
+            "group": "User Management",
+            "pages": [
+              "api/users/get-users",
+              "api/users/update-user",
+              "api/users/update-role",
+              "api/users/account-status"
+            ]
+          },
+          {
+            "group": "Accounts",
+            "pages": [
+              "api/accounts/create-account",
+              "api/accounts/get-accounts",
+              "api/accounts/get-by-user",
+              "api/accounts/update-balance",
+              "api/accounts/favorites",
+              "api/accounts/deactivate"
+            ]
+          },
+          {
+            "group": "Transactions",
+            "pages": [
+              "api/transactions/create-transaction",
+              "api/transactions/get-transactions",
+              "api/transactions/get-history",
+              "api/transactions/cancel-transaction"
+            ]
+          },
+          {
+            "group": "Deposits & Withdrawals",
+            "pages": [
+              "api/deposits/create-deposit",
+              "api/withdrawals/create-withdrawal"
+            ]
+          },
+          {
+            "group": "Services & Rewards",
+            "pages": [
+              "api/services/create-service",
+              "api/services/get-services",
+              "api/services/update-service",
+              "api/services/redeem-service",
+              "api/services/redeem-history"
+            ]
+          },
+          {
+            "group": "Account Requests",
+            "pages": [
+              "api/requests/get-requests",
+              "api/requests/approve-request",
+              "api/requests/deny-request"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Advanced",
+        "groups": [
+          {
+            "group": "Security",
+            "pages": [
+              "advanced/security/rate-limiting",
+              "advanced/security/jwt-tokens",
+              "advanced/security/password-hashing",
+              "advanced/security/cors-helmet"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "advanced/features/interest-calculation",
+              "advanced/features/daily-limits",
+              "advanced/features/transaction-timeout",
+              "advanced/features/email-notifications"
+            ]
+          },
+          {
+            "group": "Development",
+            "pages": [
+              "advanced/development/project-structure",
+              "advanced/development/middleware",
+              "advanced/development/error-handling",
+              "advanced/development/testing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "JWT-based authentication with email verification",
+    "Role-based access control (USER_ROLE, ADMIN_ROLE)",
+    "Bank account management (AHORRO, MONETARIA)",
+    "Secure transactions with daily limits and validation",
+    "Points-based rewards system for service redemption",
+    "Automated interest calculation for savings accounts",
+    "Account request approval workflow",
+    "Currency conversion support (GTQ to USD)",
+    "Rate limiting and security middleware",
+    "Email notifications for verification and transactions",
+    "Profile picture upload with Cloudinary integration",
+    "Transaction history and account favorites"
+  ],
+  "publicApiSurface": [
+    "POST /api/v1/auth/register",
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/verify-email",
+    "POST /api/v1/auth/forgot-password",
+    "POST /api/v1/auth/reset-password",
+    "GET /api/v1/auth/profile",
+    "PUT /api/v1/auth/profile",
+    "GET /api/v1/auth/users",
+    "POST /api/v1/cuentas/create",
+    "GET /api/v1/cuentas",
+    "GET /api/v1/cuentas/buscar/favoritos",
+    "GET /api/v1/cuentas/usuario/:usuario_id",
+    "PUT /api/v1/cuentas/:id/saldo",
+    "PUT /api/v1/cuentas/:id/desactivate",
+    "DELETE /api/v1/cuentas/:id/delete",
+    "POST /api/v1/transactions",
+    "GET /api/v1/transactions",
+    "GET /api/v1/transactions/account/:id_cuenta",
+    "DELETE /api/v1/transactions/cancelar/:id",
+    "POST /api/v1/deposits",
+    "POST /api/v1/withdrawals",
+    "POST /api/v1/services",
+    "GET /api/v1/services",
+    "PUT /api/v1/services/:id",
+    "DELETE /api/v1/services/:id",
+    "POST /api/v1/redeem_services",
+    "GET /api/v1/redeem_services",
+    "DELETE /api/v1/redeem_services/:id",
+    "GET /api/v1/request_accounts",
+    "PUT /api/v1/request_accounts/:id/approve",
+    "PUT /api/v1/request_accounts/:id/deny",
+    "GET /api/v1/health"
+  ]
+}
